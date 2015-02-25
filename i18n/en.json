@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "TyA <tyler@faceyspacies.com>"
+        ]
+    },
+    "movewatchers": "Move Watchers",
+    "movewatchers-desc": "Move Watchers of a page to a different page",
+    "movewatchers-summary": "Move watchers of one page to be watching another page. This is not reversible.",
+}
