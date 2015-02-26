@@ -12,7 +12,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'MoveWatchers',
 	'author' => 'TyA <tyler@faceyspacies.com>',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:MoveWatchers',
+	'url' => 'https://github.com/ty-a/MoveWatchers',
 	'descriptionmsg' => 'movewatchers-desc',
 	'version' => '0.0.0',
 );
