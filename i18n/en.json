@@ -11,6 +11,7 @@
 	"movewatchers-move-to": "Move To",
 	"movewatchers-moving-watching-from": "Moving watchers from $1 to $2!",
 	"movewatchers-below-users-changed": "Below is a list of users changed",
+	"movewatchers-duplicate-pages": "Target page is the same as original; please try again",
 	
 	"log-name-movewatchers": "MoveWatchers log",
 	"log-description-movewatchers": "The log of users who have moved watchers of one page to be watching another.",

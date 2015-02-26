@@ -71,11 +71,17 @@ class SpecialMoveWatchers extends FormSpecialPage {
 		$moveFrom = $data['movewatchers-moveFrom'];
 		$moveTo = $data['movewatchers-moveTo'];
 		
-		
-		
-		$moveFromTitle = Title::newFromText($data['movewatchers-moveFrom']);
-		$moveToTitle = Title::newFromText($data['movewatchers-moveTo']);
-		$this->moveWatchers( $moveFromTitle, $moveToTitle );
+		if( $moveTo == $moveFrom ) {
+			$out = $this->getOutput();
+			$out->addHtml("<div class=\"errorbox\">");
+			$out->addWikiMsg("movewatchers-duplicate-pages");
+			$out->addHtml("</div>");
+			
+		} else {
+			$moveFromTitle = Title::newFromText($data['movewatchers-moveFrom']);
+			$moveToTitle = Title::newFromText($data['movewatchers-moveTo']);
+			$this->moveWatchers( $moveFromTitle, $moveToTitle );
+		}
 	}
 	
 	protected function moveWatchers( $moveFromTitle, $moveToTitle ) {
