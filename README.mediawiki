@@ -16,7 +16,7 @@ to your LocalSettings.php
 To use the extension, navigate to Special:MoveWatchers on your wiki. Make sure you have appropriate permissions on the wiki. There is a Move From and a Move To box, enter the pages you want to move watchers from/to into the appropriate box and hit Submit. If there is no errors, it will perform the job and let you know everyone whose Watchlist you have updated. If you enter the same name into both boxes, you will get an error.
 
 === Logging ===
-Logs for this wiki are available at Special:Log/movewatchers
+Logs for this extension are available at Special:Log/movewatchers on your wiki
 
 === License ===
 This project is available under the MIT license. Please see the included LICENSE file.
