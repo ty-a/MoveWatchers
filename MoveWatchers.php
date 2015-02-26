@@ -19,6 +19,9 @@ $wgExtensionCredits['specialpage'][] = array(
 
 $wgGroupPermissions['sysop']['movewatchers'] = true;
 $wgGroupPermissions['*']['movewatchers'] = false;
+
+$wgLogTypes[] = 'movewatchers';
+$wgLogActionsHandlers['movewatchers/*'] = 'LogFormatter';
  
 $wgAutoloadClasses['SpecialMoveWatchers'] = __DIR__ . '/SpecialMoveWatchers.php'; # Location of the SpecialMyExtension class (Tell MediaWiki to load this file)
 $wgMessagesDirs['MoveWatchers'] = __DIR__ . "/i18n"; # Location of localisation files (Tell MediaWiki to load them)

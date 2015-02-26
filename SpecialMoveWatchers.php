@@ -25,7 +25,7 @@ class SpecialMoveWatchers extends FormSpecialPage {
      * @return string
      */
     function getGroupName() {
-		return 'maintenance';
+		return 'users';
     }
 	
 	protected function getFormFields() {
@@ -53,8 +53,11 @@ class SpecialMoveWatchers extends FormSpecialPage {
 		return( $formFields );
 	}
 	
+	protected function getDisplayFormat() {
+		return 'vform';
+	}
+	
 	protected function alterForm( HTMLForm $form ) {
-		$form->setDisplayFormat( 'vform' );
 		$form->setWrapperLegend( false );
 		
 		if( $this->getRequest()->wasPosted() ) {
@@ -102,6 +105,23 @@ class SpecialMoveWatchers extends FormSpecialPage {
 			$outText .= "*[[User:" . $u->getName() . "]]\n";
 		}
 		
+		$this->logChange( $moveFromTitle, $moveToTitle );
+		
 		$output->addWikitext($outText);
+	}
+	
+	private function logChange( $moveFromTitle, $moveToTitle ) {
+		$logEntry = new ManualLogEntry( 'movewatchers', 'movewatchers' );
+		$logEntry->setPerformer( $this->getUser() );
+		$logEntry->setTarget( $moveFromTitle );
+		$logEntry->setParameters( 
+			array(
+				"4::fromPage" => $moveFromTitle->getDBkey(),
+				"5::destPage" => $moveToTitle->getDBkey()
+			)
+		);
+		
+		$logid = $logEntry->insert();
+		$logEntry->publish( $logid );
 	}
 }
