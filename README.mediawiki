@@ -1,0 +1,22 @@
+== MoveWatchers ==
+
+MoveWatchers is a MediaWiki extension that allows users with the <code>movewatchers</code> right to move watchers of one page to be watching another page.
+
+=== Permissions ===
+* movewatchers - This permission gives access to the extension. It is given to sysops by default.
+
+=== Installation ===
+To install this extension, first download the code, available at http://github.com/ty-a/MoveWatchers, into your extensions directory. Then add
+
+require_once( $IP . '/extensions/MoveWatchers/MoveWatchers.php' );
+
+to your LocalSettings.php
+
+=== Usage ===
+To use the extension, navigate to Special:MoveWatchers on your wiki. Make sure you have appropriate permissions on the wiki. There is a Move From and a Move To box, enter the pages you want to move watchers from/to into the appropriate box and hit Submit. If there is no errors, it will perform the job and let you know everyone whose Watchlist you have updated. If you enter the same name into both boxes, you will get an error.
+
+=== Logging ===
+Logs for this wiki are available at Special:Log/movewatchers
+
+=== License ===
+This project is available under the MIT license. Please see the included LICENSE file.
