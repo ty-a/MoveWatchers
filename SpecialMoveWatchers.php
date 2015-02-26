@@ -34,7 +34,7 @@ class SpecialMoveWatchers extends FormSpecialPage {
 		
 		$formFields = array(
 			'movewatchers-moveFrom' => array(
-				'label' => 'Move From:',
+				'label-message' => 'movewatchers-move-from',
 				'type' => 'text',
 				'required' => true,
 				'default' => $request->getText('moveFrom'),
@@ -42,7 +42,7 @@ class SpecialMoveWatchers extends FormSpecialPage {
 			),
 			
 			'movewatchers-moveTo' => array(
-				'label' => 'Move To:',
+				'label-message' => 'movewatchers-move-to',
 				'type' => 'text',
 				'required' => true,
 				'default' => $request->getText('moveTo'),
@@ -93,8 +93,8 @@ class SpecialMoveWatchers extends FormSpecialPage {
 			__METHOD__ 
 		);
 		
-		$output->addWikitext("Moving watchers from " . $moveFromTitle->getDBkey() . " to " . $moveToTitle->getDBkey() . "!");
-		$output->addWikitext("Below is a list of users changed");
+		$output->addWikiMsg("movewatchers-moving-watching-from", $moveFromTitle->getDBkey(), $moveToTitle->getDBKey());
+		$output->addWikiMsg("movewatchers-below-users-changed");
 		
 		$outText = "";
 		   

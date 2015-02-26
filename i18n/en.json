@@ -7,6 +7,10 @@
     "movewatchers": "Move Watchers",
     "movewatchers-desc": "Move Watchers of a page to a different page",
     "movewatchers-summary": "Move watchers of one page to be watching another page. This is not reversible.",
+	"movewatchers-move-from": "Move From",
+	"movewatchers-move-to": "Move To",
+	"movewatchers-moving-watching-from": "Moving watchers from $1 to $2!",
+	"movewatchers-below-users-changed": "Below is a list of users changed",
 	
 	"log-name-movewatchers": "MoveWatchers log",
 	"log-description-movewatchers": "The log of users who have moved watchers of one page to be watching another.",
