@@ -35,14 +35,14 @@ class SpecialMoveWatchers extends FormSpecialPage {
 		$formFields = array(
 			'movewatchers-moveFrom' => array(
 				'label-message' => 'movewatchers-move-from',
-				'type' => 'text',
+				'type' => $request->wasPosted()? 'hidden':'text',
 				'required' => true,
 				'default' => $request->getText('moveFrom')
 			),
 			
 			'movewatchers-moveTo' => array(
 				'label-message' => 'movewatchers-move-to',
-				'type' => 'text',
+				'type' => $request->wasPosted()? 'hidden':'text',
 				'required' => true,
 				'default' => $request->getText('moveTo')
 			),
